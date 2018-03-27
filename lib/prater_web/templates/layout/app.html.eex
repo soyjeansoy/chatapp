@@ -20,7 +20,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Prater</a>
+          <%= link "Prater", to: room_path(@conn, :index), class: "navbar-brand" %>
         </div>
       </div>
     </div>
