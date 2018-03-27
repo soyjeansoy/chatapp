@@ -16,7 +16,8 @@ defmodule PraterWeb.Router do
   scope "/", PraterWeb do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", RoomController, :index
+    get "/rooms/new", RoomController, :new
   end
 
   # Other scopes may use custom stacks.
