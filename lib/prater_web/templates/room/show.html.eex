@@ -1,0 +1,10 @@
+<h2><%= @room.name %></h2>
+<a href="<%= room_path(@conn, :edit, @room.id) %>" class="btn btn-primary">Edit</a>
+<a href="<%= room_path(@conn, :index) %>" class="btn btn-default">Back</a>
+<%= case @room.description do %>
+  <%= nil -> %><h4>No Description</h4>
+  <%= "" -> %><h4>No Description</h4>
+  <%= " " -> %><h4>No Description</h4>
+  <%= _ -> %><h4><%= @room.description %></h4>
+<% end %>
+last updated at: <%= @room.updated_at %>

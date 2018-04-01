@@ -1,9 +1,11 @@
 <div class="row">
   <div class="col-md-3">
-    <h3>Rooms <%= link "+", to: room_path(@conn, :new), class: "btn btn-sm btn-success" %></h3>
+    <h3>Rooms <a href="<%= room_path(@conn, :new) %>" class="btn btn-sm btn-success">+</a></h3>
     <ul class="list-group">
       <%= for room <- @rooms do %>
-        <li class="list-group-item"><%= room.name %></li>
+        <li class="list-group-item">
+          <%= link room.name, to: room_path(@conn, :show, room.id)%> <%= link "-", to: room_path(@conn, :delete, room), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-xs btn-danger pull-right" %>
+        </li>
       <% end %>
     </ul>
   </div>
@@ -14,7 +16,7 @@
       </div>
       <div class="page-header">
         <h2><small>Choose the room on the left to join</small></h2>
-        <h2><small>or <%= link "Create", to: room_path(@conn, :new), class: "btn btn-success" %> a new one</small></h2>
+        <h2><small>or <a href="<%= room_path(@conn, :new) %>" class="btn btn-success">Create</a> a new one</small></h2>
       </div>
     </div>
   </div>

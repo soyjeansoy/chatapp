@@ -52,7 +52,7 @@ config :phoenix, :stacktrace_depth, 20
 config :prater, Prater.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "root",
+  password: "postgres",
   database: "prater_dev",
   hostname: "localhost",
   pool_size: 10
