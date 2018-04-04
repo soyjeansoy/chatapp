@@ -5,7 +5,10 @@
 3. [Introduction to Ecto and Models](http://whatdidilearn.info/2018/01/28/introduction-to-ecto-and-models.html)
 4. [Implementing CRUD in Phoenix](http://whatdidilearn.info/2018/02/04/implementing-crud-in-phoenix.html)
 5. [How to use Bootstrap 4 with Phoenix](http://whatdidilearn.info/2018/02/11/how-to-use-bootstrap-4-with-phoenix.html)
-
+6. [Authentication in Phoenix](http://whatdidilearn.info/2018/02/18/authentication-in-phoenix.html)
+7. [Phoenix: Authentication and Authorization using Plugs](http://whatdidilearn.info/2018/02/25/phoenix-authentication-and-authorization-using-plugs.html)
+8. [Using channels in Phoenix](http://whatdidilearn.info/2018/03/04/using-channels-in-phoenix.html)
+9. [Using Phoenix Presence](http://whatdidilearn.info/2018/03/11/using-phoenix-presence.html)
 
 To start your Phoenix server:
 
