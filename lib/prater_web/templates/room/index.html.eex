@@ -1,23 +1,27 @@
 <div class="row">
   <div class="col-md-3">
-    <h3>Rooms <a href="<%= room_path(@conn, :new) %>" class="btn btn-sm btn-success">+</a></h3>
+    <h4>Rooms <a href="<%= room_path(@conn, :new) %>">+</a></h4>
     <ul class="list-group">
       <%= for room <- @rooms do %>
         <li class="list-group-item">
-          <%= link room.name, to: room_path(@conn, :show, room.id)%> <%= link "-", to: room_path(@conn, :delete, room), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-xs btn-danger pull-right" %>
+          <%= link room.name, to: room_path(@conn, :show, room.id), title: room.description, data: [toggle: "tooltip", placement: "top", html: "true"] %>
+          <%= if !is_nil(room.description) do %>
+            <div class="float-right text-info" data-toggle="tooltip" data-placement="top" data-html="true" title="<%= room.description %>"></div>
+          <% end %>
+          <%= link "-", to: room_path(@conn, :delete, room), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-sm btn-danger float-right" %>
         </li>
       <% end %>
     </ul>
   </div>
-  <div class="col-md-9">
-    <div class="jumbotron">
-      <div class="page-header">
-        <h2>Welcome to Prater</h2>
-      </div>
-      <div class="page-header">
-        <h2><small>Choose the room on the left to join</small></h2>
-        <h2><small>or <a href="<%= room_path(@conn, :new) %>" class="btn btn-success">Create</a> a new one</small></h2>
-      </div>
-    </div>
+  <div class="col">
+    <section class="jumbotron text-center">
+      <h1 class="jumbotron-heading mb-5">Welcome to Prater</h1>
+      <p class="lead text-muted">
+        Choose the room on the left to join
+      </p>
+      <p class="lead text-muted">
+        or <a href="<%= room_path(@conn, :new) %>" class="btn btn-success">Create</a> a new one
+      </p>
+    </section>
   </div>
 </div>
