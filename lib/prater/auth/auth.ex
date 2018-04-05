@@ -6,7 +6,7 @@ defmodule Prater.Auth do
     user = Repo.get_by(User, email: email)
 
     cond do
-      user && user.encrypted_password == password ->
+      user && Comeonin.Bcrypt.checkpw(password, user.encrypted password) ->
         {:ok, user}
       true ->
         {:error, :unauthorized}

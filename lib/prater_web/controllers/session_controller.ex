@@ -6,7 +6,7 @@ defmodule PraterWeb.SessionController do
   end
 
   def create(conn, %{"session" => %{"email" => email, "password" => password}}) do
-    case Auth.sign_in(email, password) do
+    case Prater.Auth.sign_in(email, password) do
       {:ok, user} ->
         conn
           |> put_session(:current_user_id, user.id)
@@ -21,7 +21,7 @@ defmodule PraterWeb.SessionController do
 
   def delete(conn, _params) do
     conn
-      |> Auth.sign_out()
+      |> Prater.Auth.sign_out()
       |> redirect(to: room_path(conn, :index))
   end
 end
