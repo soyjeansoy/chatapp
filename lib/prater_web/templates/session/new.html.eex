@@ -1,4 +1,4 @@
-<h2>Log In</h2>
+<h2 class="text-center">Log In</h2>
 
 <div class="auth-form-wrapper">
   <%= form_for @conn, session_path(@conn, :create), [as: :session, class: "form-signin"], fn f -> %>
