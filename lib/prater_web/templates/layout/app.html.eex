@@ -22,15 +22,28 @@
         </nav>
         <%= link "Sign Out", to: session_path(@conn, :delete), method: :delete, class: "btn btn-outline-primary" %>
       <% else %>
+        <%= link "Register", to: registration_path(@conn, :new), class: "btn btn-outline-primary btn-space" %>
         <%= link "Sign In", to: session_path(@conn, :new), class: "btn btn-outline-primary" %>
       <% end %>
     </div>
     <div class="container">
       <%= unless is_nil(get_flash(@conn, :info)) do %>
-        <p class="alert alert-success" role="alert"><%= get_flash(@conn, :info) %></p>
+        <!-- <p class="alert alert-success" role="alert"><%= get_flash(@conn, :info) %></p> -->
+        <p class="alert alert-success alert-dismissible show" role="alert">
+          <%= get_flash(@conn, :info) %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </p>
       <% end %>
       <%= unless is_nil(get_flash(@conn, :error)) do %>
-        <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+        <!-- <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p> -->
+        <p class="alert alert-danger alert-dismissible show" role="alert">
+          <%= get_flash(@conn, :error) %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </p>
       <% end %>
 
       <main role="main">

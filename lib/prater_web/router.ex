@@ -20,6 +20,7 @@ defmodule PraterWeb.Router do
     resources "/rooms", RoomController
 
     resources "/sessions", SessionController, only: [:new, :create]
+    resources "/registrations", RegistrationController, only: [:new, :create]
     delete "/signout", SessionController, :delete
   end
 

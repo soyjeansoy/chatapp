@@ -21,5 +21,6 @@ import "phoenix_html"
 // import socket from "./socket"
 
 $(function() {
-  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="tooltip"]').tooltip();
+  $('.alert').alert();
 })
